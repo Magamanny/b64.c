@@ -12,7 +12,8 @@ default: test
 
 test: CFLAGS+=$(TEST_CFLAGS)
 test: test.o encode.o decode.o deps/ok/ok.o
-
+mytest: test.c
+	gcc test.c encode.c decode.c buffer.c
 clean:
 	rm -f *.o test deps/ok/ok.o
 
