@@ -9,15 +9,6 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include "b64.h"
-
-#ifdef b64_USE_CUSTOM_MALLOC
-extern void* b64_malloc(size_t);
-#endif
-
-#ifdef b64_USE_CUSTOM_REALLOC
-extern void* b64_realloc(void*, size_t);
-#endif
-
 int
 b64_decode (const char *src,unsigned char *dec, size_t len) {
   return b64_decode_ex(src, dec, len, NULL);
