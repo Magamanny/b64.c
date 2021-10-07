@@ -9,8 +9,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
-#include <ok/ok.h>
-
 #include "b64.h"
 
 #define S(x) # x
@@ -20,7 +18,6 @@
     char *r = (char *) m(a, strlen((char *) a));                     \
     assert(0 == strcmp(b, r));                                       \
     free(r);                                                         \
-    ok(tmp);                                                         \
 })
 
 void* custom_malloc(size_t size){
@@ -58,6 +55,6 @@ main (void) {
         "the kinkajou and monkey fought over the banana");
   }
 
-  ok_done();
+  printf("Ok done");
   return 0;
 }
