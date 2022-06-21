@@ -51,26 +51,39 @@ extern "C" {
 #endif
 
 /**
- * Encode `unsigned char *' source with `size_t' size.
- * Returns a `char *' base64 encoded string.
+ * @brief Encode `unsigned char *' source with `size_t' size.
+ * @note Returns a `char *' base64 encoded string.
+ * @param src: pointer to the stirng that is to be encoded to base64
+ * @param enc: encoded buffer,pointer to the string where the resultant base64 string will be held
+ * @param len: The lenght of the src string
+ * @return 0 on success 1 on fail
  */
 
-char *
-b64_encode (const unsigned char *, size_t);
-
-/**
- * Decode `char *' source with `size_t' size.
- * Returns a `unsigned char *' base64 decoded string.
- */
-unsigned char *
-b64_decode (const char *, size_t);
+int
+b64_encode (const unsigned char *src,char *enc, size_t len);
 
 /**
- * Decode `char *' source with `size_t' size.
- * Returns a `unsigned char *' base64 decoded string + size of decoded string.
+ * @brief Decode `char *' source with `size_t' size.
+ * @note Returns a `unsigned char *' base64 decoded string.
+ * @param src: pointer to the stirng(base64) that is to be decoded to hex(array)
+ * @param dec: decoded buffer,pointer to the string(array) where the resultant binary(hex) string will be held
+ * @param len: The lenght of the src string
+ * @return 0 on success 1 on fail
  */
-unsigned char *
-b64_decode_ex (const char *, size_t, size_t *);
+int
+b64_decode (const char *src,unsigned char *dec, size_t len);
+
+/**
+ * @brief Decode `char *' source with `size_t' size.
+ * @note Returns a `unsigned char *' base64 decoded string + size of decoded string.
+ * @param src: pointer to the stirng(base64) that is to be decoded to hex(array)
+ * @param dec: decoded buffer, pointer to the string(array) where the resultant binary(hex) string will be held
+ * @param len: The lenght of the src string
+ * @param decsize: pointer to variable where the dst size will be returned
+ * @return 0 on success 1 on fail
+ */
+int
+b64_decode_ex (const char *src,unsigned char *dec, size_t len, size_t *decsize);
 
 #ifdef __cplusplus
 }
