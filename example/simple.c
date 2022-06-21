@@ -7,7 +7,7 @@ int
 main (void) {
   unsigned char *str = "brian the monkey and bradley the kinkajou are friends";
   char enc[1024];
-  b64_encode(str, enc, strlen(str));
+  b64_encode(str, enc, 200);
 
   printf("%s\n", enc); // YnJpYW4gdGhlIG1vbmtleSBhbmQgYnJhZGxleSB0aGUga2lua2Fqb3UgYXJlIGZyaWVuZHM=
 

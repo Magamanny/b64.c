@@ -55,7 +55,7 @@ extern "C" {
  * @note Returns a `char *' base64 encoded string.
  * @param src: pointer to the stirng that is to be encoded to base64
  * @param enc: encoded buffer,pointer to the string where the resultant base64 string will be held
- * @param len: The lenght of the src string
+ * @param len: The lenght of the src string(the message to be encoded)
  * @return 0 on success 1 on fail
  */
 
@@ -67,7 +67,7 @@ b64_encode (const unsigned char *src,char *enc, size_t len);
  * @note Returns a `unsigned char *' base64 decoded string.
  * @param src: pointer to the stirng(base64) that is to be decoded to hex(array)
  * @param dec: decoded buffer,pointer to the string(array) where the resultant binary(hex) string will be held
- * @param len: The lenght of the src string
+ * @param len: The lenght of the src string(the encoded massage)
  * @return 0 on success 1 on fail
  */
 int

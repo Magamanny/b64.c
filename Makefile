@@ -15,10 +15,10 @@ test: test.o encode.o decode.o deps/ok/ok.o
 mytest: test.c
 	gcc test.c encode.c decode.c
 	./a.out
-example: ./example/simple.c ./example/batch.c
+example: ./example/simple.c ./example/batch_encode.c
 	gcc ./example/simple.c encode.c decode.c -I./
 	./a.out
-	gcc ./example/batch.c encode.c decode.c -I./
+	gcc ./example/batch_encode.c encode.c decode.c -I./
 	./a.out
 clean:
 	rm -f *.o test deps/ok/ok.o
